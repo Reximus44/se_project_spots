@@ -66,10 +66,12 @@
   font-size: 16px;
   line-height: 1;
   gap: 8px;
+  opacity: 0.7;
 }
 
 .profile__edit-btn:hover {
   cursor: pointer;
+  opacity: 1;
 }
 
 .profile__edit-pencil-icon {
@@ -94,6 +96,7 @@
 
 .profile__add-btn:hover {
   cursor: pointer;
+  opacity: 0.8;
 }
 
 .profile__plus-icon {
@@ -105,14 +108,13 @@
 
 @media screen and (max-width: 662px) {
   .profile {
-    display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px 0 20px 0;
   }
 
   .profile__avatar {
-    padding: 0 0px 12px 0px;
+    padding: 0 0 12px 0;
     max-width: 80px;
     max-height: 80px;
   }
@@ -121,22 +123,13 @@
     margin: 0 0 6px 0;
     font-size: 20px;
     max-width: 288px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+
   }
 
   .profile__description {
     margin: 0 0 32px 0;
     max-width: 288px;
     text-align: center;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
   }
 
   .profile__edit-btn {
