@@ -1,24 +1,44 @@
+/* TODO - finish styling preview modal */
+/* TODO - make preview modal responsive */
+
 .modal {
     position: fixed;
     top: 0;
     left: 0;
-    bottom: 0;
     right: 0;
-    background-color: rgba(0,0,0,0.5);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0 20px;
+    bottom: 0;
+    padding: 0 19px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: flex; /* Ensure it start as flex */
+    opacity: 0;
     visibility: hidden;
-
+    transition: visibility 0s linear 0.5s, opacity 0.5s linear;
 }
 
 .modal_opened {
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
     visibility: visible;
+    transition-delay: 0s;
 }
 
-.modal__container {
+.modal__caption {
+    background: rgba(33, 33, 33, 1);
+    margin: 0;
+    padding: 4px 8px 4px 8px;
+    color: white;
+    border-radius: 8px;
+    line-height: 24px;
+    /* width: 198px; */
+    height: 24px;
+    font-weight: 500;
+    size: 20px;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+} 
+
+.modal__content {
     background: #fff;
     padding: 32px 50px;
     max-width: 730px;
@@ -26,6 +46,21 @@
     box-sizing: border-box;
     position: relative;
     border-radius: 8px;
+}
+
+.modal__content_type_preview {
+    padding: 0;
+    border-radius: 8px;
+    background: none;
+}
+
+.modal__image {
+    width: 100%;
+    object-fit: cover;
+    max-width: 80vw;
+    max-height: 80vh;
+    border-radius: 8px;
+    margin-bottom: 8px;
 }
 
 .modal__close-btn {
@@ -36,6 +71,12 @@
     height: 40px;
     background-color: transparent;
     border: none;
+}
+
+.modal__close-btn_type_preview {
+    top: 0;
+    right: -52.5px;
+    opacity: 1;
 }
 
 .modal__title {
@@ -74,7 +115,7 @@
         padding: 0 10px;
     }
 
-    .modal__container {
+    .modal__content {
         padding: 12px;
     }
 
