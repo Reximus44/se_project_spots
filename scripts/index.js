@@ -30,6 +30,7 @@ const editModalBtn = document.querySelector(".profile__edit-btn");
 const cardModalBtn = document.querySelector(".profile__add-btn");
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
+const addCardForm = document.querySelector("#add-card-form"); 
 
 // Form elements
 const editModal = document.querySelector("#edit-modal");
@@ -44,7 +45,7 @@ const cardModalCloseBtn = cardModal.querySelector(".modal__close-btn");
 const cardNameInput = cardModal.querySelector("#add-card-name-input");
 const cardLinkInput = cardModal.querySelector("#add-card-link-input");
 
-// select the modal
+// Select the modal
 const previewModal = document.querySelector("#preview-modal");
 const previewModalImageEl = previewModal.querySelector(".modal__image");
 const previewModalCaptionEl = previewModal.querySelector(".modal__caption");
@@ -75,7 +76,8 @@ function handleAddCardSubmit(evt) {
   const inputValues = { name: cardNameInput.value, link: cardLinkInput.value };
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
-  closeModal(editModal);
+  closeModal(cardModal);
+  addCardForm.reset();
 }
 
 function getCardElement(data) {
@@ -136,13 +138,13 @@ initialCards.forEach((item) => {
   cardsList.prepend(cardElement);
 });
 
-// Testing... Testing...
+// Modal preview close button 
 
 const closeModalPreviewBtn = document.querySelector(".modal__close-btn_type_preview");
 
 const closeModalPreview = document.querySelector("#preview-modal");
 
 closeModalPreviewBtn.addEventListener("click", function () {
-  closeModalPreview.classList.remove("modal_opened");
+  closeModal(closeModalPreview);
 })
- 
+
