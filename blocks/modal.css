@@ -1,5 +1,3 @@
-/* TODO - finish styling preview modal */
-/* TODO - make preview modal responsive */
 
 .modal {
     justify-content: center;
@@ -102,6 +100,19 @@
     padding: 16px 12px;
 }
 
+.modal__input_type_error {
+    border: 1px solid rgba(255, 0, 0, 0.6);
+}
+
+.modal__error {
+    display: block;
+    /* TODO - Use correct color and font sizes */
+    color: rgba(255, 0, 0, 0.7);
+    font-weight: 500;
+    line-height: 17.6px;
+    size: 16px;
+}
+
 .modal__submit-btn {
     width: 156px;
     padding: 18px 0;
@@ -111,6 +122,10 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 1;
+}
+
+.modal__submit-btn_disabled {
+    background-color: gray;
 }
 
 @media screen and (max-width: 627px) {
