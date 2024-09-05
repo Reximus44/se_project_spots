@@ -71,13 +71,14 @@
     height: 40px;
     background-color: transparent;
     border: none;
+    background-image: url(../images/close_icon.svg);
 }
 
 .modal__close-btn_type_preview {
     top: 0;
     right: -52.5px;
     opacity: 1;
-
+    background-image: url(../images/close-icon-light.svg);
 }
 
 .modal__title {
