@@ -59,12 +59,28 @@ const cardsList = document.querySelector(".cards__list");
 const cardTemplate = document.querySelector("#card-template");
 
 function openModal(modal) {
-
+  document.addEventListener("keydown", handleEscape);
+  modal.addEventListener("mousedown", handleOverlayClick);
   modal.classList.add("modal_opened");
+}
+
+const handleOverlayClick  =  (evt) => {
+  console.log(evt)
+  if (evt.currentTarget === evt.target || evt.target.classList.contains("modal__close-btn")) {
+      closeModal(evt.currentTarget)
+  }
+}
+
+function handleEscape(evt) {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal_opened");
+    closeModal(openedModal)
+  }
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", handleEscape);
 }
 
 function handleEditFormSubmit(evt) {
