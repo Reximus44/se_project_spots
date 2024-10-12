@@ -1,4 +1,11 @@
 // TODO - Pass settings object to the validation functions that are called in this file
+import "./index.css";
+
+import avatarSrc from "./src/images/avatar.jpg"
+const avatarImage = document.getElementById("avatar");
+avatarImage.src = avatarSrc;
+
+import { disableButton, resetValidation, enableValidation, settings } from "../scripts/validation.js";
 
 const initialCards = [
   {
@@ -174,3 +181,5 @@ const closeModalPreview = document.querySelector("#preview-modal");
 // closeModalPreviewBtn.addEventListener("click", function () {
 //   closeModal(closeModalPreview);
 // });
+
+enableValidation(settings);
