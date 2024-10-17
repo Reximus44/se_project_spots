@@ -138,7 +138,7 @@ function handleAddCardSubmit(evt) {
   api
     .addCard(inputValues)
     .then((data) => {
-      const cardElement = getCardElement(inputValues);
+      const cardElement = getCardElement(data);
       cardsList.prepend(cardElement);
       disableButton(cardSubmitBtn, settings);
       closeModal(cardModal);
